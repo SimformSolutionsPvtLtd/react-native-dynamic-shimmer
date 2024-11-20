@@ -172,12 +172,12 @@ export interface CalculateWidthFromAspectRatioReturnType {
 }
 
 /**
- * Props for the Skeleton component.
+ * Props for the Shimmer component.
  *
- * @property {JSX.Element} children - The child elements to render within the skeleton.
- * @property {boolean} isLoading - Indicates whether the skeleton is in a loading state.
+ * @property {JSX.Element} children - The child elements to render within the shimmer.
+ * @property {boolean} isLoading - Indicates whether the shimmer is in a loading state.
  */
-export interface SkeletonProps {
+export interface ShimmerProps {
   children: JSX.Element;
   isLoading: boolean;
 }

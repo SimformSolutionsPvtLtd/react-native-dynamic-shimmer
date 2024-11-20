@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
-import { Skeleton } from 'react-native-dynamic-shimmer';
+import { Shimmer } from 'react-native-dynamic-shimmer';
 import { Strings, contentForScrollView } from '../../constants';
 import { useLoading } from '../../hooks';
 import styles from './ScrollViewExampleStyles';
@@ -31,7 +31,7 @@ const ScrollViewSample = (): React.JSX.Element => {
  * ScrollViewExample
  *
  * This component checks if the data is loading, and based on the loading state,
- * either renders the `ScrollViewSample` component wrapped inside a Skeleton shimmer effect,
+ * either renders the `ScrollViewSample` component wrapped inside a Shimmer effect,
  * or the loaded content itself. The `useLoading` hook manages the loading state.
  *
  * @returns {React.JSX.Element} A JSX element that conditionally renders the content with a shimmer effect.
@@ -41,9 +41,9 @@ const ScrollViewExample = (): React.JSX.Element => {
 
   return (
     <View style={styles.mainContainer}>
-      <Skeleton isLoading={isLoading}>
+      <Shimmer isLoading={isLoading}>
         <ScrollViewSample />
-      </Skeleton>
+      </Shimmer>
     </View>
   );
 };

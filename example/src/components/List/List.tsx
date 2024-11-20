@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Image, Text, View } from 'react-native';
-import { Skeleton } from 'react-native-dynamic-shimmer';
+import { Shimmer } from 'react-native-dynamic-shimmer';
 import { sampleDataForList } from '../../constants';
 import { useLoading } from '../../hooks';
 import styles from './ListStyles';
@@ -9,11 +9,11 @@ import type { ListItem } from './ListTypes';
 /**
  * List
  *
- * It renders a list of items with a skeleton loading effect in a React Native
+ * It renders a list of items with a shimmer loading effect in a React Native
  * app.
  * @returns A functional component named List is being returned. This component renders a
  * FlatList with items from sampleDataForList. Each item in the list is rendered using the renderItem
- * function which displays an image, name, and job title. The component also includes a Skeleton
+ * function which displays an image, name, and job title. The component also includes a Shimmer
  * component that shows a loading indicator based on the isLoading state.
  */
 const List = (): React.JSX.Element => {
@@ -34,13 +34,13 @@ const List = (): React.JSX.Element => {
   };
 
   return (
-    <Skeleton isLoading={isLoading}>
+    <Shimmer isLoading={isLoading}>
       <FlatList
         data={sampleDataForList}
         renderItem={renderItem}
         keyExtractor={item => item?.id}
       />
-    </Skeleton>
+    </Shimmer>
   );
 };
 

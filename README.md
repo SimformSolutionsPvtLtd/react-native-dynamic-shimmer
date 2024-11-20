@@ -6,9 +6,9 @@
 
 ---
 
-This package offers an efficient Skeleton component wrapper for React Native apps, enabling you to effortlessly show loading placeholders (shimmer effects) while data is being retrieved.
+This package offers an efficient Shimmer component wrapper for React Native apps, enabling you to effortlessly show loading placeholders (shimmer effects) while data is being retrieved.
 
-The Skeleton component can be used with any view, including text, images, and custom components, ensuring a smooth loading experience.
+The Shimmer component can be used with any view, including text, images, and custom components, ensuring a smooth loading experience.
 
 ---
 
@@ -69,12 +69,12 @@ cd ios && pod install
 
 #### Basic Example
 
-Here we’ve created a simple component and wrapped that in Skeleton to show shimmer effect.
+Here we’ve created a simple component and wrapped that in Shimmer to show shimmer effect.
 
 ```tsx
 import React, { useEffect, useState } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
-import { Skeleton } from 'react-native-dynamic-shimmer';
+import { Shimmer } from 'react-native-dynamic-shimmer';
 
 const App = (): React.JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
@@ -111,9 +111,9 @@ const App = (): React.JSX.Element => {
   };
 
   return (
-    <Skeleton isLoading={isLoading}>
+    <Shimmer isLoading={isLoading}>
       <ProfileCard />
-    </Skeleton>
+    </Shimmer>
   );
 };
 
@@ -167,8 +167,8 @@ export default App;
 
 | **Props**     | **Default** |    **Type**     | **Description**                                                                                                                                                                                                                       |
 | ------------- | :---------: | :-------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children**  |      -      | React.ReactNode | The child components that will be rendered inside the Skeleton component. When isLoading is true, these children will be replaced by the shimmer effect. When isLoading is false, the children are displayed normally.                |
-| **isLoading** |    true     |     boolean     | This prop controls whether the Skeleton component displays the loading shimmer effect. If isLoading is true, the shimmer effect will be visible; otherwise, the actual content (wrapped by the Skeleton component) will be displayed. |
+| **children**  |      -      | React.ReactNode | The child components that will be rendered inside the Shimmer component. When isLoading is true, these children will be replaced by the shimmer effect. When isLoading is false, the children are displayed normally.                |
+| **isLoading** |    true     |     boolean     | This prop controls whether the Shimmer component displays the loading shimmer effect. If isLoading is true, the shimmer effect will be visible; otherwise, the actual content (wrapped by the Shimmer component) will be displayed. |
 
 ---
 

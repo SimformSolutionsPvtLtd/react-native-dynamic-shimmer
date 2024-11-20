@@ -7,11 +7,11 @@ import {
   calculateWidthFromAspectRatio,
   isAspectRatio,
 } from '../../../../utils';
-import shimmerStyles from './ShimmerStyles';
-import type { ShimmerPropType } from './ShimmerTypes';
+import shimmerEffectStyles from './ShimmerEffectStyles';
+import type { ShimmerEffectPropType } from './ShimmerEffectTypes';
 
 /**
- * Shimmer Component
+ * ShimmerEffect Component
  *
  * A functional component that renders a shimmering effect using an animated gradient.
  * The shimmer effect can be applied to any child component, providing a loading indicator
@@ -25,7 +25,7 @@ import type { ShimmerPropType } from './ShimmerTypes';
  *
  * @returns {JSX.Element} The rendered shimmer component.
  */
-const Shimmer: React.FC<ShimmerPropType> = ({
+const ShimmerEffect: React.FC<ShimmerEffectPropType> = ({
   shimmerWidth,
   duration = 2000,
   childStyle,
@@ -79,14 +79,14 @@ const Shimmer: React.FC<ShimmerPropType> = ({
   const interpolatedChildWidth =
     typeof childWidth === 'number' ? childWidth : shimmerWidth ?? screenWidth;
 
-  const { shimmerStylesForGradient } = shimmerStyles({
+  const { shimmerEffectStylesForGradient } = shimmerEffectStyles({
     interpolatedChildWidth,
   });
 
   return (
     <Animated.View
       style={[
-        shimmerStylesForGradient,
+        shimmerEffectStylesForGradient,
         StyleSheet.absoluteFillObject,
         {
           transform: [
@@ -116,4 +116,4 @@ const Shimmer: React.FC<ShimmerPropType> = ({
   );
 };
 
-export default Shimmer;
+export default ShimmerEffect;

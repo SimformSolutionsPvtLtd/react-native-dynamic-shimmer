@@ -5,7 +5,7 @@ import type { ViewStyle } from 'react-native';
  *
  * @property {number} index - The index of the item being rendered.
  * @property {ViewStyle} childStyle - The style applied to the child component.
- * @property {ViewStyle} skeletonStyle - The style applied to the skeleton effect.
+ * @property {ViewStyle} shimmerStyle - The style applied to the shimmer effect.
  * @property {number} shimmerWidth - The width of the shimmer effect.
  * @property {number} parentWidth - The width of the parent component.
  * @property {boolean} isLoading - Indicates whether the loading state is active.
@@ -13,7 +13,7 @@ import type { ViewStyle } from 'react-native';
 export interface RenderShimmerPropTypes {
   index: number;
   childStyle: ViewStyle;
-  skeletonStyle: ViewStyle;
+  shimmerStyle: ViewStyle;
   shimmerWidth: number;
   parentWidth: number;
   isLoading: boolean;
