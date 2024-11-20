@@ -24,23 +24,23 @@ import {
   getWidthFromAspectRatio,
   isAspectRatio,
 } from '../../utils';
-import skeletonStyles from './SkeletonStyles';
+import shimmerStyles from './ShimmerStyles';
 import type {
   ComputeTotalWidthReturnType,
   FetchLeafNodesPropsType,
-  SkeletonProps,
-} from './SkeletonTypes';
+  ShimmerProps,
+} from './ShimmerTypes';
 import { RenderShimmerView, ShimmerFlatList } from './components';
 
 /**
- * Skeleton component that wraps child components and displays a loading state.
+ * Shimmer component that wraps child components and displays a loading state.
  *
- * @param {Object} props - The props for the Skeleton component.
+ * @param {Object} props - The props for the Shimmer component.
  * @param {React.ReactNode} props.children - The child components to render.
- * @param {boolean} props.isLoading - Indicates if the skeleton is in loading state.
- * @returns {React.ReactNode} - The rendered children or skeleton view.
+ * @param {boolean} props.isLoading - Indicates if the shimmer is in loading state.
+ * @returns {React.ReactNode} - The rendered children or shimmer view.
  */
-const Skeleton = ({ children, isLoading }: SkeletonProps) => {
+const Shimmer = ({ children, isLoading }: ShimmerProps) => {
   if (!isLoading) return children;
 
   /**
@@ -247,7 +247,7 @@ const Skeleton = ({ children, isLoading }: SkeletonProps) => {
         flattenedStyleValue: flattenContentContainerStyle?.height,
       });
 
-      const { skeletonStylesForEachChild } = skeletonStyles({
+      const { shimmerStylesForEachChild } = shimmerStyles({
         child,
         numericWidth: getAdjustedWidth(
           calculatedChildWidth,
@@ -335,7 +335,7 @@ const Skeleton = ({ children, isLoading }: SkeletonProps) => {
             return RenderShimmerView({
               index,
               childStyle: nestedChildStyle,
-              skeletonStyle: skeletonStylesForEachChild,
+              shimmerStyle: shimmerStylesForEachChild,
               shimmerWidth: getAdjustedWidth(
                 ariaLabelWidth ? ariaLabelWidth : calculatedChildWidth,
                 totalMargin,
@@ -380,7 +380,7 @@ const Skeleton = ({ children, isLoading }: SkeletonProps) => {
           return RenderShimmerView({
             index,
             childStyle,
-            skeletonStyle: skeletonStylesForEachChild,
+            shimmerStyle: shimmerStylesForEachChild,
             shimmerWidth: getAdjustedWidth(
               ariaLabelWidth ? ariaLabelWidth : calculatedChildWidth,
               totalMargin,
@@ -401,7 +401,7 @@ const Skeleton = ({ children, isLoading }: SkeletonProps) => {
           return RenderShimmerView({
             index,
             childStyle,
-            skeletonStyle: skeletonStylesForEachChild,
+            shimmerStyle: shimmerStylesForEachChild,
             shimmerWidth: getAdjustedWidth(
               ariaLabelWidth ? ariaLabelWidth : calculatedChildWidth,
               totalMargin,
@@ -432,14 +432,14 @@ const Skeleton = ({ children, isLoading }: SkeletonProps) => {
     });
   };
 
-  const skeletonChildren = fetchLeafNodes({
+  const shimmerChildren = fetchLeafNodes({
     subChildren: children,
     parentInfo: { parent: <></> },
   });
 
   return (
-    <View pointerEvents={isLoading ? 'none' : 'auto'}>{skeletonChildren}</View>
+    <View pointerEvents={isLoading ? 'none' : 'auto'}>{shimmerChildren}</View>
   );
 };
 
-export default Skeleton;
+export default Shimmer;

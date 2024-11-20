@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Shimmer } from '../Shimmer';
+import { ShimmerEffect } from '../ShimmerEffect';
 import type { RenderShimmerPropTypes } from './RenderShimmerViewTypes';
 
 /**
@@ -9,7 +9,7 @@ import type { RenderShimmerPropTypes } from './RenderShimmerViewTypes';
  * @param {Object} props - The props for the shimmer view.
  * @param {number} props.index - The index of the child.
  * @param {ViewStyle} props.childStyle - The style for the child component.
- * @param {ViewStyle} props.skeletonStyle - The style for the skeleton component.
+ * @param {ViewStyle} props.shimmerStyle - The style for the shimmer component.
  * @param {number} props.shimmerWidth - The calculated width for the shimmer effect.
  * @param {number} props.parentWidth - The width of the parent component.
  * @param {boolean} props.isLoading - Indicates if the data is still loading.
@@ -18,7 +18,7 @@ import type { RenderShimmerPropTypes } from './RenderShimmerViewTypes';
 const RenderShimmerView = ({
   index,
   childStyle,
-  skeletonStyle,
+  shimmerStyle,
   shimmerWidth,
   parentWidth,
   isLoading,
@@ -26,9 +26,9 @@ const RenderShimmerView = ({
   return (
     <View
       key={index}
-      style={[childStyle, skeletonStyle]}
+      style={[childStyle, shimmerStyle]}
       pointerEvents={isLoading ? 'none' : 'auto'}>
-      <Shimmer
+      <ShimmerEffect
         shimmerWidth={shimmerWidth}
         childStyle={childStyle}
         parentWidth={parentWidth}

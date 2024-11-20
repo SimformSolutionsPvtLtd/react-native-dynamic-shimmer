@@ -7,7 +7,7 @@ import type {
 } from './ShimmerFlatListTypes';
 
 /**
- * Renders components within a FlatList with a skeleton loading effect.
+ * Renders components within a FlatList with a shimmer loading effect.
  *
  * @param {Object} props - The properties for rendering the FlatList.
  * @param {JSX.Element} props.child - The child component to render within the FlatList.

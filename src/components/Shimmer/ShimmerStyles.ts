@@ -19,20 +19,20 @@ import {
 } from '../../utils';
 
 /**
- * Generates styles for skeleton components based on child element properties and dimensions.
+ * Generates styles for shimmer components based on child element properties and dimensions.
  *
- * This function computes the appropriate styles for a skeleton component,
+ * This function computes the appropriate styles for a shimmer component,
  * considering the aspect ratio of the child element and the dimensions
  * of its parent. It flattens the child style, calculates the required width
- * and height, and returns the styles necessary for rendering the skeleton.
+ * and height, and returns the styles necessary for rendering the shimmer.
  *
- * @param child - The child JSX element for which to generate skeleton styles.
+ * @param child - The child JSX element for which to generate shimmer styles.
  * @param numericWidth - An optional numeric width to use if the child style does not specify one.
  * @param parentHeight - The height of the parent container (default is the screen height).
  * @param parentWidth - The width of the parent container (default is the screen width).
- * @returns An object containing the skeleton styles for the child element.
+ * @returns An object containing the shimmer styles for the child element.
  */
-const skeletonStyles = ({
+const shimmerStyles = ({
   child,
   numericWidth,
   parentHeight = screenHeight,
@@ -87,7 +87,7 @@ const skeletonStyles = ({
     }) - AppConst.offSetForWidth;
 
   return StyleSheet.create({
-    skeletonStylesForEachChild: {
+    shimmerStylesForEachChild: {
       backgroundColor: Colors.gray,
       overflow: 'hidden',
       margin,
@@ -99,4 +99,4 @@ const skeletonStyles = ({
   });
 };
 
-export default skeletonStyles;
+export default shimmerStyles;

@@ -1,7 +1,7 @@
 {
   "name": "react-native-dynamic-shimmer",
   "version": "1.0.0",
-  "description": "Skeleton component wrapper for React Native apps",
+  "description": "Shimmer component wrapper for React Native apps",
   "main": "lib/index",
   "types": "lib/index.d.ts",
   "author": "Simform Solutions",

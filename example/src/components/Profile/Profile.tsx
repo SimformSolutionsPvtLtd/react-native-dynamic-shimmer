@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { Skeleton } from 'react-native-dynamic-shimmer';
+import { Shimmer } from 'react-native-dynamic-shimmer';
 import { AppConst, Strings } from '../../constants';
 import { useLoading } from '../../hooks';
 import styles from './ProfileStyles';
@@ -37,19 +37,19 @@ const ProfileCard = (): React.JSX.Element => {
 /**
  * Profile
  *
- * It integrates the ProfileCard with a loading skeleton.
- * It uses the `useLoading` hook to determine if the content should display the skeleton or the profile.
+ * It integrates the ProfileCard with a loading shimmer effect.
+ * It uses the `useLoading` hook to determine if the content should display the shimmer or the profile.
  *
- * @returns {React.JSX.Element} A component that conditionally renders the ProfileCard wrapped in a Skeleton
+ * @returns {React.JSX.Element} A component that conditionally renders the ProfileCard wrapped in a Shimmer
  * loading animation based on the loading state.
  */
 const Profile = (): React.JSX.Element => {
   const isLoading = useLoading();
 
   return (
-    <Skeleton isLoading={isLoading}>
+    <Shimmer isLoading={isLoading}>
       <ProfileCard />
-    </Skeleton>
+    </Shimmer>
   );
 };
 

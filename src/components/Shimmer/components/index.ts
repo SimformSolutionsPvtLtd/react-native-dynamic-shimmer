@@ -1,5 +1,5 @@
 import { RenderShimmerView } from './RenderShimmerView';
-import { Shimmer } from './Shimmer';
+import { ShimmerEffect } from './ShimmerEffect';
 import { ShimmerFlatList } from './ShimmerFlatList';
 
-export { RenderShimmerView, Shimmer, ShimmerFlatList };
+export { RenderShimmerView, ShimmerEffect, ShimmerFlatList };

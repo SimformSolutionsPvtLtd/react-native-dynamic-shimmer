@@ -1,4 +1,4 @@
-import type { FetchLeafNodesPropsType, ParentInfo } from '../../SkeletonTypes';
+import type { FetchLeafNodesPropsType, ParentInfo } from '../../ShimmerTypes';
 
 /**
  * Props for handling the rendering of FlatList items.

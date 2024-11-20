@@ -8,7 +8,7 @@ import type { ViewStyle } from 'react-native';
  * @property {ViewStyle} childStyle - The style to apply to the child elements.
  * @property {number} parentWidth - The width of the parent container.
  */
-export interface ShimmerPropType {
+export interface ShimmerEffectPropType {
   shimmerWidth: number;
   duration?: number;
   childStyle: ViewStyle;
