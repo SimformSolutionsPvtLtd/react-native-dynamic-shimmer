@@ -1,2 +1,2 @@
 export { default as AppConst } from './AppConst';
-export { dummyDataForFlatList, marginProperties } from './DummyData';
+export { marginProperties, staticFlatListData } from './StaticData';

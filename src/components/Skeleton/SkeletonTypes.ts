@@ -34,28 +34,6 @@ export interface ChildStyleType {
 }
 
 /**
- * Represents an item of data.
- *
- * @property {string} id - The unique identifier for the item.
- * @property {string} title - The title of the item.
- */
-interface ItemData {
-  id: string;
-  title: string;
-}
-
-/**
- * Props for rendering an item in a list.
- *
- * @property {ItemData} item - The item data to render.
- * @property {number} index - The index of the item in the list.
- */
-export interface RenderItemProps {
-  item: ItemData;
-  index: number;
-}
-
-/**
  * Props for calculating the width of a parent component.
  *
  * @property {DimensionValue | undefined} baseWidth - The base width of the parent, which may be undefined.
@@ -123,7 +101,7 @@ export interface ComputeTotalWidthReturnType {
  * @property {ParentInfo} parentInfo - Information about the parent component.
  * @property {number} finalMargin - The final margin to be applied to the child element.
  */
-export interface HandleFlatListRenderingPropType {
+export interface ShimmerFlatListPropType {
   child: JSX.Element;
   widthData: (JSX.Element & { width: number })[];
   calculatedChildWidth: number | undefined;
@@ -146,25 +124,6 @@ export interface ItemCopyType {
     item: JSX.Element;
     width: number | string;
   };
-}
-
-/**
- * Props for rendering a shimmer effect.
- *
- * @property {number} index - The index of the item being rendered.
- * @property {ViewStyle} childStyle - The style applied to the child component.
- * @property {ViewStyle} skeletonStyle - The style applied to the skeleton effect.
- * @property {number} shimmerWidth - The width of the shimmer effect.
- * @property {number} parentWidth - The width of the parent component.
- * @property {boolean} isLoading - Indicates whether the loading state is active.
- */
-export interface RenderShimmerPropTypes {
-  index: number;
-  childStyle: ViewStyle;
-  skeletonStyle: ViewStyle;
-  shimmerWidth: number;
-  parentWidth: number;
-  isLoading: boolean;
 }
 
 /**
