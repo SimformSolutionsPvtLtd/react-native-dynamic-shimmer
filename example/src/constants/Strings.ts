@@ -7,14 +7,14 @@
  *
  */
 export default {
-  lorem_string:
+  loremString:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies urna eget sapien ultrices, eu maximus justo rutrum.',
-  michael_williams: 'Michael Williams',
-  software_engineer: 'Software Engineer',
+  michaelWilliams: 'Michael Williams',
+  softwareEngineer: 'Software Engineer',
   description:
     'Mauris vel mi ut orci venenatis tristique. Nullam sed suscipit velit. Nullam in elit vitae libero mattis ultricies.',
-  welcome_text: 'Welcome to ScrollView Example',
-  sample_list: 'SampleList',
-  sample_profile: 'SampleProfile',
-  scroll_view_example: 'ScrollViewExample',
+  welcomeText: 'Welcome to ScrollView Example',
+  list: 'List',
+  profile: 'Profile',
+  scrollViewExample: 'ScrollViewExample',
 };

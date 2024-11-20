@@ -21,21 +21,21 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate(NavigationStrings.SAMPLE_LIST);
+          navigation.navigate(NavigationStrings.LIST);
         }}>
-        <Text style={styles.title}>{Strings.sample_list}</Text>
+        <Text style={styles.title}>{Strings.list}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate(NavigationStrings.SAMPLE_PROFILE);
+          navigation.navigate(NavigationStrings.PROFILE);
         }}>
-        <Text style={styles.title}>{Strings.sample_profile}</Text>
+        <Text style={styles.title}>{Strings.profile}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate(NavigationStrings.SCROLL_VIEW_EXAMPLE);
         }}>
-        <Text style={styles.title}>{Strings.scroll_view_example}</Text>
+        <Text style={styles.title}>{Strings.scrollViewExample}</Text>
       </TouchableOpacity>
     </View>
   );

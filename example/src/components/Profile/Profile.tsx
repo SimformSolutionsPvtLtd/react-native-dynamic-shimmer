@@ -3,7 +3,7 @@ import { Image, Text, View } from 'react-native';
 import { Skeleton } from 'react-native-dynamic-shimmer';
 import { AppConst, Strings } from '../../constants';
 import { useLoading } from '../../hooks';
-import styles from './SampleProfileStyles';
+import styles from './ProfileStyles';
 
 /**
  * ProfileCard
@@ -24,18 +24,18 @@ const ProfileCard = (): React.JSX.Element => {
       />
       <View style={styles.textContainer}>
         {/* The shimmer width for this Text element is calculated based on the aria-label string length, offering more precise control over shimmer width. */}
-        <Text aria-label={Strings.michael_williams} style={styles.name}>
-          {Strings.michael_williams}
+        <Text aria-label={Strings.michaelWilliams} style={styles.name}>
+          {Strings.michaelWilliams}
         </Text>
-        <Text style={styles.jobTitle}>{Strings.software_engineer}</Text>
-        <Text style={styles.bio}>{Strings.lorem_string}</Text>
+        <Text style={styles.jobTitle}>{Strings.softwareEngineer}</Text>
+        <Text style={styles.bio}>{Strings.loremString}</Text>
       </View>
     </View>
   );
 };
 
 /**
- * SampleProfile
+ * Profile
  *
  * It integrates the ProfileCard with a loading skeleton.
  * It uses the `useLoading` hook to determine if the content should display the skeleton or the profile.
@@ -43,7 +43,7 @@ const ProfileCard = (): React.JSX.Element => {
  * @returns {React.JSX.Element} A component that conditionally renders the ProfileCard wrapped in a Skeleton
  * loading animation based on the loading state.
  */
-const SampleProfile = (): React.JSX.Element => {
+const Profile = (): React.JSX.Element => {
   const isLoading = useLoading();
 
   return (
@@ -53,4 +53,4 @@ const SampleProfile = (): React.JSX.Element => {
   );
 };
 
-export default SampleProfile;
+export default Profile;

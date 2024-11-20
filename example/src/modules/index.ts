@@ -1,4 +1,4 @@
 export * from './Home';
-export * from './SampleList';
-export * from './SampleProfile';
+export * from './List';
+export * from './Profile';
 export * from './ScrollViewExample';

@@ -20,7 +20,6 @@ The Skeleton component can be used with any view, including text, images, and cu
     <tr>
       <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/basic_example.gif"></a></td>
       <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/faltlist_example.gif"></a></td>
-      <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/scrollview_example.gif"></a></td>
     </tr>
   </table>
 
@@ -70,16 +69,14 @@ cd ios && pod install
 
 #### Basic Example
 
-Here i have created one custom component and wrap that component using skeleton for shimmer effect.
-
-Check the example below for more information.
+Here we’ve created a simple component and wrapped that in Skeleton to show shimmer effect.
 
 ```tsx
 import React, { useEffect, useState } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
 import { Skeleton } from 'react-native-dynamic-shimmer';
 
-const Example = (): React.JSX.Element => {
+const App = (): React.JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -153,7 +150,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Example;
+export default App;
 ```
 
 #### 🎬 Preview
@@ -168,20 +165,20 @@ export default Example;
 
 ### Properties
 
-| **Props** | **Default** |    **Type**     | **Description**                                                                                                                                                                                                                       |
-| --------- | :---------: | :-------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| children  |      -      | React.ReactNode | The child components that will be rendered inside the Skeleton component. When isLoading is true, these children will be replaced by the shimmer effect. When isLoading is false, the children are displayed normally.                |
-| isLoading |    true     |     boolean     | This prop controls whether the Skeleton component displays the loading shimmer effect. If isLoading is true, the shimmer effect will be visible; otherwise, the actual content (wrapped by the Skeleton component) will be displayed. |
+| **Props**     | **Default** |    **Type**     | **Description**                                                                                                                                                                                                                       |
+| ------------- | :---------: | :-------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **children**  |      -      | React.ReactNode | The child components that will be rendered inside the Skeleton component. When isLoading is true, these children will be replaced by the shimmer effect. When isLoading is false, the children are displayed normally.                |
+| **isLoading** |    true     |     boolean     | This prop controls whether the Skeleton component displays the loading shimmer effect. If isLoading is true, the shimmer effect will be visible; otherwise, the actual content (wrapped by the Skeleton component) will be displayed. |
 
 ---
 
-### Advanced Prop
+### Additional Prop
 
 This prop is used in a **Text** element when you need a customized length for a particular text.
 
 | **Props**  | **Default** | **Type** | **Description**                                                                                                                                          |
 | ---------- | :---------: | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| aria-label |      -      |  string  | If provided, the shimmer width for a Text element is calculated based on the aria-label string length, offering more precise control over shimmer width. |
+| **aria-label** |      -      |  string  | If provided, the shimmer width for a Text element is calculated based on the aria-label string length, offering more precise control over shimmer width. |
 
 ---
 
@@ -194,6 +191,15 @@ yarn
 yarn example ios   // For ios
 yarn example android   // For Android
 ```
+
+# TODO
+
+- [ ] Enhance FlatList Shimmer Effect with a Custom Hook in the renderItem Function
+- [ ] Add Support for Memoized Components
+- [ ] Implement Compatibility for SVG Components
+- [ ] Handle Complex UI Scenarios
+- [ ] Extend Support for Various UI Libraries
+- [ ] Performance Improvement
 
 ## Find this library useful? ❤️
 

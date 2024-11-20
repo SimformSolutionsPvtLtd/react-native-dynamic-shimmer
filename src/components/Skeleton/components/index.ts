@@ -1,4 +1,5 @@
+import { RenderShimmerView } from './RenderShimmerView';
 import { Shimmer } from './Shimmer';
-import { RootChecker } from './RootChecker';
+import { ShimmerFlatList } from './ShimmerFlatList';
 
-export { Shimmer, RootChecker };
+export { RenderShimmerView, Shimmer, ShimmerFlatList };

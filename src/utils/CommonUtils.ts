@@ -12,9 +12,18 @@ import type {
   ParentInfo,
   ParseDimensionPropType,
 } from '../../src/components';
-import { RootChecker } from '../components';
 import { AppConst } from '../constants';
 import { height as screenHeight, width as screenWidth } from '../theme';
+
+/**
+ * Checks if the given parent component is a React Fragment.
+ *
+ * @param {JSX.Element} parent - The parent component to check.
+ * @returns {boolean} - Returns `true` if the parent is a React Fragment, otherwise `false`.
+ */
+export const checkRootComponent = (parent: JSX.Element) => {
+  return _.isEqual(parent, React.createElement(React.Fragment));
+};
 
 /**
  * Flattens a style object into a single style object.
@@ -500,7 +509,7 @@ export const calculateChildWidth = (
 
   const childType = child?.type?.name;
 
-  const isParentRoot: boolean = RootChecker(parentInfo?.parent);
+  const isParentRoot: boolean = checkRootComponent(parentInfo?.parent);
 
   const calculateWidth = (style: ViewStyle): DimensionValue | undefined => {
     const {

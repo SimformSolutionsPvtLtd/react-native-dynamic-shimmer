@@ -8,7 +8,7 @@
  */
 export default {
   HOME: 'Home',
-  SAMPLE_LIST: 'SampleList',
-  SAMPLE_PROFILE: 'SampleProfile',
+  LIST: 'List',
+  PROFILE: 'Profile',
   SCROLL_VIEW_EXAMPLE: 'ScrollViewExample',
 };

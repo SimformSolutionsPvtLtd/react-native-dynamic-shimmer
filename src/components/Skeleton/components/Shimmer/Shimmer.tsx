@@ -7,7 +7,7 @@ import {
   calculateWidthFromAspectRatio,
   isAspectRatio,
 } from '../../../../utils';
-import { styles } from './ShimmerStyles';
+import shimmerStyles from './ShimmerStyles';
 import type { ShimmerPropType } from './ShimmerTypes';
 
 /**
@@ -79,10 +79,14 @@ const Shimmer: React.FC<ShimmerPropType> = ({
   const interpolatedChildWidth =
     typeof childWidth === 'number' ? childWidth : shimmerWidth ?? screenWidth;
 
+  const { shimmerStylesForGradient } = shimmerStyles({
+    interpolatedChildWidth,
+  });
+
   return (
     <Animated.View
       style={[
-        styles.gradient,
+        shimmerStylesForGradient,
         StyleSheet.absoluteFillObject,
         {
           transform: [
@@ -103,8 +107,8 @@ const Shimmer: React.FC<ShimmerPropType> = ({
       ]}>
       <LinearGradient
         start={{ x: 0.0, y: 0.25 }}
-        end={{ x: 0.5, y: 1.0 }}
-        locations={[0, 0.5, 0.6]}
+        end={{ x: 1.0, y: 0.25 }}
+        locations={[0, 0.5, 1]}
         colors={[Colors.gray, Colors.white, Colors.gray]}
         style={StyleSheet.absoluteFillObject}
       />

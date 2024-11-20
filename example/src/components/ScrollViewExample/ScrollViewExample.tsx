@@ -16,7 +16,7 @@ import styles from './ScrollViewExampleStyles';
 const ScrollViewSample = (): React.JSX.Element => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>{Strings.welcome_text}</Text>
+      <Text style={styles.heading}>{Strings.welcomeText}</Text>
       {contentForScrollView.map((item, index) => (
         <View style={styles.container} key={index}>
           <Image style={styles.image} source={{ uri: item?.imageUrl }} />
