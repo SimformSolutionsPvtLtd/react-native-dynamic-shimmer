@@ -1,4 +1,4 @@
-<!-- // here we will have the poster of library -->
+![Dynamic Shimmer - Simform](./assets/react-native-dynamic-shimmer.gif)
 
 # react-native-dynamic-shimmer
 
