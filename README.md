@@ -85,7 +85,7 @@ const App = (): React.JSX.Element => {
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, [3000]);
+  }, []);
 
   const ProfileCard = (): React.JSX.Element => {
     return (
