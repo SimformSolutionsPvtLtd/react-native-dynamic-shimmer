@@ -1,3 +1,4 @@
 import applicationStyle from './ApplicationStyle';
+import { default as Colors } from './Colors';
 
-export { applicationStyle };
+export { Colors, applicationStyle };

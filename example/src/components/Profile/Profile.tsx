@@ -3,6 +3,7 @@ import { Image, Text, View } from 'react-native';
 import { Shimmer } from 'react-native-dynamic-shimmer';
 import { AppConst, Strings } from '../../constants';
 import { useLoading } from '../../hooks';
+import { ShimmerElement } from '../ShimmerElement';
 import styles from './ProfileStyles';
 
 /**
@@ -47,7 +48,10 @@ const Profile = (): React.JSX.Element => {
   const isLoading = useLoading();
 
   return (
-    <Shimmer isLoading={isLoading}>
+    <Shimmer
+      loading={isLoading}
+      shimmerElement={<ShimmerElement />}
+      duration={2450}>
       <ProfileCard />
     </Shimmer>
   );

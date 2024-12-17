@@ -50,9 +50,9 @@ $ yarn add react-native-dynamic-shimmer
 ##### 2. Install peer dependencies
 
 ```bash
-$ npm install react-native-linear-gradient lodash
+$ npm install lodash
 # --- or ---
-$ yarn add react-native-linear-gradient lodash
+$ yarn add lodash
 ```
 
 ##### 3. Install cocoapods in the ios project
@@ -61,7 +61,7 @@ $ yarn add react-native-linear-gradient lodash
 cd ios && pod install
 ```
 
-##### Know more about [react-native-linear-gradient](https://www.npmjs.com/package/react-native-linear-gradient) and [lodash](https://www.npmjs.com/package/lodash)
+##### Know more about [lodash](https://www.npmjs.com/package/lodash)
 
 ---
 
@@ -75,6 +75,7 @@ Here we’ve created a simple component and wrapped that in Shimmer to show shim
 import React, { useEffect, useState } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
 import { Shimmer } from 'react-native-dynamic-shimmer';
+import LinearGradient from 'react-native-linear-gradient';
 
 const App = (): React.JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
@@ -86,6 +87,18 @@ const App = (): React.JSX.Element => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const ShimmerElement = () => {
+    return (
+      <LinearGradient
+        start={{ x: 0.0, y: 0.25 }}
+        end={{ x: 1.0, y: 0.25 }}
+        locations={[0, 0.5, 1]}
+        colors={[Colors.gray, Colors.white, Colors.gray]}
+        style={StyleSheet.absoluteFillObject}
+      />
+    );
+  };
 
   const ProfileCard = (): React.JSX.Element => {
     return (
@@ -111,7 +124,7 @@ const App = (): React.JSX.Element => {
   };
 
   return (
-    <Shimmer isLoading={isLoading}>
+    <Shimmer loading={isLoading} duration={2450} shimmerElement={<ShimmerElement />}>
       <ProfileCard />
     </Shimmer>
   );
@@ -153,6 +166,8 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
+> **Note: If you're using React Native CLI, you can use LinearGradient from the 'react-native-linear-gradient' package for the shimmer element, as shown in the above example. For Expo projects, you should use 'expo-linear-gradient' instead of 'react-native-linear-gradient' for gradient support for shimmer element**.
+
 #### 🎬 Preview
 
 ---
@@ -165,10 +180,12 @@ export default App;
 
 ### Properties
 
-| **Props**     | **Default** |    **Type**     | **Description**                                                                                                                                                                                                                       |
-| ------------- | :---------: | :-------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children**  |      -      | React.ReactNode | The child components that will be rendered inside the Shimmer component. When isLoading is true, these children will be replaced by the shimmer effect. When isLoading is false, the children are displayed normally.                |
-| **isLoading** |    true     |     boolean     | This prop controls whether the Shimmer component displays the loading shimmer effect. If isLoading is true, the shimmer effect will be visible; otherwise, the actual content (wrapped by the Shimmer component) will be displayed. |
+| **Props**    | **Default** |      **Type**      | **Description**                                                                                                                                                                                                                   |
+| ------------ | :---------: | :----------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **children** |      -      |  React.ReactNode   | The child components that will be rendered inside the Shimmer component. When loading is true, these children will be replaced by the shimmer effect. When loading is false, the children are displayed normally.                 |
+| **loading**  |    true     |      boolean       | This prop controls whether the Shimmer component displays the loading shimmer effect. If loading is true, the shimmer effect will be visible; otherwise, the actual content (wrapped by the Shimmer component) will be displayed. |
+| **shimmerElement**  |      -      | React.ReactElement | A custom gradient element used to create the shimmer effect. This allows flexibility to provide different gradient designs for the shimmer animation.                                                                             |
+| **duration** |    1000     |       number       | Specifies the duration of the shimmer animation in milliseconds. This value determines how long the shimmer effect will run, allowing you to control the speed and smoothness of the shimmer transition.                          |
 
 ---
 
@@ -176,8 +193,8 @@ export default App;
 
 This prop is used in a **Text** element when you need a customized length for a particular text.
 
-| **Props**  | **Default** | **Type** | **Description**                                                                                                                                          |
-| ---------- | :---------: | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Props**      | **Default** | **Type** | **Description**                                                                                                                                          |
+| -------------- | :---------: | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **aria-label** |      -      |  string  | If provided, the shimmer width for a Text element is calculated based on the aria-label string length, offering more precise control over shimmer width. |
 
 ---
