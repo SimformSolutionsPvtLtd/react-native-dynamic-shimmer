@@ -3,6 +3,7 @@ import { Image, ScrollView, Text, View } from 'react-native';
 import { Shimmer } from 'react-native-dynamic-shimmer';
 import { Strings, contentForScrollView } from '../../constants';
 import { useLoading } from '../../hooks';
+import { ShimmerElement } from '../ShimmerElement';
 import styles from './ScrollViewExampleStyles';
 
 /**
@@ -41,7 +42,10 @@ const ScrollViewExample = (): React.JSX.Element => {
 
   return (
     <View style={styles.mainContainer}>
-      <Shimmer isLoading={isLoading}>
+      <Shimmer
+        loading={isLoading}
+        shimmerElement={<ShimmerElement />}
+        duration={2450}>
         <ScrollViewSample />
       </Shimmer>
     </View>

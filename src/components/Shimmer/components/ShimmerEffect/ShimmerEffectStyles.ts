@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Colors } from '../../../../theme';
 
 /**
  * The function `shimmerEffectStyles` creates styles for a gradient shimmer effect with a specified width.
@@ -18,6 +19,19 @@ const shimmerEffectStyles = ({
     shimmerEffectStylesForGradient: {
       width: interpolatedChildWidth,
       zIndex: 1,
+    },
+    shimmerOverlay: {
+      width: 15,
+      height: '100%',
+      backgroundColor: Colors.gray,
+      elevation: 30,
+      shadowOffset: {
+        width: 30,
+        height: 10,
+      },
+      shadowRadius: 10,
+      shadowColor: Colors.white,
+      shadowOpacity: 1,
     },
   });
 };

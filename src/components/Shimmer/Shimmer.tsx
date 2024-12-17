@@ -37,11 +37,18 @@ import { RenderShimmerView, ShimmerFlatList } from './components';
  *
  * @param {Object} props - The props for the Shimmer component.
  * @param {React.ReactNode} props.children - The child components to render.
- * @param {boolean} props.isLoading - Indicates if the shimmer is in loading state.
+ * @param {boolean} props.loading - Indicates if the shimmer is in loading state.
+ * @param {React.ReactElement} props.shimmerElement - The gradient element used for the shimmer effect.
+ * @param {number} props.duration - The duration of the shimmer effect animation
  * @returns {React.ReactNode} - The rendered children or shimmer view.
  */
-const Shimmer = ({ children, isLoading }: ShimmerProps) => {
-  if (!isLoading) return children;
+const Shimmer = ({
+  children,
+  loading,
+  shimmerElement,
+  duration,
+}: ShimmerProps) => {
+  if (!loading) return children;
 
   /**
    * Recursively fetches and renders leaf nodes from a given set of children,
@@ -342,7 +349,9 @@ const Shimmer = ({ children, isLoading }: ShimmerProps) => {
                 prevMargin
               ),
               parentWidth,
-              isLoading,
+              loading,
+              shimmerElement,
+              duration,
             });
           } else {
             const widthForEachChild = calculatedEachChildWidth({
@@ -387,7 +396,9 @@ const Shimmer = ({ children, isLoading }: ShimmerProps) => {
               prevMargin
             ),
             parentWidth,
-            isLoading,
+            loading,
+            shimmerElement,
+            duration,
           });
         }
         if (!child?.props?.children) {
@@ -408,7 +419,9 @@ const Shimmer = ({ children, isLoading }: ShimmerProps) => {
               prevMargin
             ),
             parentWidth,
-            isLoading,
+            loading,
+            shimmerElement,
+            duration,
           });
         } else {
           const widthForEachChild = calculatedEachChildWidth({
@@ -438,7 +451,7 @@ const Shimmer = ({ children, isLoading }: ShimmerProps) => {
   });
 
   return (
-    <View pointerEvents={isLoading ? 'none' : 'auto'}>{shimmerChildren}</View>
+    <View pointerEvents={loading ? 'none' : 'auto'}>{shimmerChildren}</View>
   );
 };
 

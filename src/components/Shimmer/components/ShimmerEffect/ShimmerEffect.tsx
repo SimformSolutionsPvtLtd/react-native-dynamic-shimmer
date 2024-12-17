@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, StyleSheet, type DimensionValue } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { Animated, StyleSheet, View, type DimensionValue } from 'react-native';
 import { AppConst } from '../../../../constants';
-import { Colors, width as screenWidth } from '../../../../theme';
+import { width as screenWidth } from '../../../../theme';
 import {
   calculateWidthFromAspectRatio,
   isAspectRatio,
@@ -19,17 +18,19 @@ import type { ShimmerEffectPropType } from './ShimmerEffectTypes';
  *
  * @param {Object} props - The component props.
  * @param {DimensionValue} props.shimmerWidth - The width of the shimmer effect.
- * @param {number} [props.duration=2000] - The duration of the shimmer animation in milliseconds. Default is 2000.
+ * @param {number} [props.duration=1000] - The duration of the shimmer animation in milliseconds. Default is 1000.
  * @param {Object} [props.childStyle] - The style object to apply to the child component.
  * @param {number} [props.parentWidth] - The width of the parent component, used for calculating percentage-based widths.
+ * @param {React.ReactElement} props.shimmerElement - The gradient element used for the shimmer effect.
  *
  * @returns {JSX.Element} The rendered shimmer component.
  */
 const ShimmerEffect: React.FC<ShimmerEffectPropType> = ({
   shimmerWidth,
-  duration = 2000,
+  duration = 1000,
   childStyle,
   parentWidth,
+  shimmerElement,
 }) => {
   // Create a reference to an animated value initialized to 0
   const animatedValue: Animated.Value = useRef(new Animated.Value(0)).current;
@@ -45,7 +46,7 @@ const ShimmerEffect: React.FC<ShimmerEffectPropType> = ({
   useEffect(() => {
     const shimmerAnimation = Animated.loop(
       Animated.timing(animatedValue, {
-        toValue: 0.8,
+        toValue: 1,
         duration: duration,
         useNativeDriver: true,
       })
@@ -79,9 +80,10 @@ const ShimmerEffect: React.FC<ShimmerEffectPropType> = ({
   const interpolatedChildWidth =
     typeof childWidth === 'number' ? childWidth : shimmerWidth ?? screenWidth;
 
-  const { shimmerEffectStylesForGradient } = shimmerEffectStyles({
-    interpolatedChildWidth,
-  });
+  const { shimmerEffectStylesForGradient, shimmerOverlay } =
+    shimmerEffectStyles({
+      interpolatedChildWidth,
+    });
 
   return (
     <Animated.View
@@ -105,13 +107,7 @@ const ShimmerEffect: React.FC<ShimmerEffectPropType> = ({
           }),
         },
       ]}>
-      <LinearGradient
-        start={{ x: 0.0, y: 0.25 }}
-        end={{ x: 1.0, y: 0.25 }}
-        locations={[0, 0.5, 1]}
-        colors={[Colors.gray, Colors.white, Colors.gray]}
-        style={StyleSheet.absoluteFillObject}
-      />
+      {shimmerElement ? shimmerElement : <View style={shimmerOverlay} />}
     </Animated.View>
   );
 };

@@ -1,3 +1,4 @@
+import type React from 'react';
 import type { DimensionValue, ViewStyle } from 'react-native';
 
 /**
@@ -175,9 +176,13 @@ export interface CalculateWidthFromAspectRatioReturnType {
  * Props for the Shimmer component.
  *
  * @property {JSX.Element} children - The child elements to render within the shimmer.
- * @property {boolean} isLoading - Indicates whether the shimmer is in a loading state.
+ * @property {boolean} loading - Indicates whether the shimmer is in a loading state.
+ * @property {React.ReactElement} shimmerElement - The gradient element used for the shimmer effect.
+ * @property {number} duration - The duration of the shimmer effect animation
  */
 export interface ShimmerProps {
   children: JSX.Element;
-  isLoading: boolean;
+  loading: boolean;
+  shimmerElement?: React.ReactElement;
+  duration?: number;
 }

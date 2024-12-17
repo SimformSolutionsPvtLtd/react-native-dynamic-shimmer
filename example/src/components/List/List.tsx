@@ -3,6 +3,7 @@ import { FlatList, Image, Text, View } from 'react-native';
 import { Shimmer } from 'react-native-dynamic-shimmer';
 import { sampleDataForList } from '../../constants';
 import { useLoading } from '../../hooks';
+import { ShimmerElement } from '../ShimmerElement';
 import styles from './ListStyles';
 import type { ListItem } from './ListTypes';
 
@@ -34,7 +35,7 @@ const List = (): React.JSX.Element => {
   };
 
   return (
-    <Shimmer isLoading={isLoading}>
+    <Shimmer loading={true} shimmerElement={<ShimmerElement />} duration={2450}>
       <FlatList
         data={sampleDataForList}
         renderItem={renderItem}

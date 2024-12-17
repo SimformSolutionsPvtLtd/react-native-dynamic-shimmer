@@ -12,7 +12,10 @@ import type { RenderShimmerPropTypes } from './RenderShimmerViewTypes';
  * @param {ViewStyle} props.shimmerStyle - The style for the shimmer component.
  * @param {number} props.shimmerWidth - The calculated width for the shimmer effect.
  * @param {number} props.parentWidth - The width of the parent component.
- * @param {boolean} props.isLoading - Indicates if the data is still loading.
+ * @param {boolean} props.loading - Indicates if the data is still loading.
+ * @param {React.ReactElement} props.shimmerElement - The gradient element used for the shimmer effect.
+ * @param {number} props.duration - The duration of the shimmer effect animation
+ *
  * @returns {JSX.Element} - The rendered shimmer view.
  */
 const RenderShimmerView = ({
@@ -21,17 +24,21 @@ const RenderShimmerView = ({
   shimmerStyle,
   shimmerWidth,
   parentWidth,
-  isLoading,
+  loading,
+  shimmerElement,
+  duration,
 }: RenderShimmerPropTypes) => {
   return (
     <View
       key={index}
       style={[childStyle, shimmerStyle]}
-      pointerEvents={isLoading ? 'none' : 'auto'}>
+      pointerEvents={loading ? 'none' : 'auto'}>
       <ShimmerEffect
         shimmerWidth={shimmerWidth}
         childStyle={childStyle}
         parentWidth={parentWidth}
+        shimmerElement={shimmerElement}
+        duration={duration}
       />
     </View>
   );
