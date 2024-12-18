@@ -1,15 +1,15 @@
 {
   "name": "react-native-dynamic-shimmer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shimmer component wrapper for React Native apps",
   "main": "lib/index",
   "types": "lib/index.d.ts",
+  "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer#readme",
   "author": "Simform Solutions",
   "repository": {
     "type": "git",
     "url": "https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"
   },
-  "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer#readme",
   "keywords": [
     "react",
     "react-native",
