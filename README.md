@@ -1,4 +1,4 @@
-![Dynamic Shimmer - Simform](./assets/react-native-dynamic-shimmer.gif)
+![Dynamic Shimmer - Simform](./assets/banner-of-dynamic-shimmer.gif)
 
 # react-native-dynamic-shimmer
 
@@ -18,8 +18,8 @@ The Shimmer component can be used with any view, including text, images, and cus
 
  <table>
     <tr>
-      <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/basic_example.gif"></a></td>
-      <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/faltlist_example.gif"></a></td>
+      <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/preview1.gif"></a></td>
+      <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/preview2.gif"></a></td>
     </tr>
   </table>
 
@@ -174,7 +174,7 @@ export default App;
 
   <table>
     <tr>
-      <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/basic_example.gif"></a></td>
+      <td><a href="https://github.com/SimformSolutionsPvtLtd/react-native-dynamic-shimmer"><img width="300" alt="SimformSolutions" src="./assets/preview1.gif"></a></td>
     </tr>
   </table>
 
@@ -182,10 +182,9 @@ export default App;
 
 | **Props**    | **Default** |      **Type**      | **Description**                                                                                                                                                                                                                   |
 | ------------ | :---------: | :----------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children** |      -      |  React.ReactNode   | The child components that will be rendered inside the Shimmer component. When loading is true, these children will be replaced by the shimmer effect. When loading is false, the children are displayed normally.                 |
 | **loading**  |    true     |      boolean       | This prop controls whether the Shimmer component displays the loading shimmer effect. If loading is true, the shimmer effect will be visible; otherwise, the actual content (wrapped by the Shimmer component) will be displayed. |
-| **shimmerElement**  |      -      | React.ReactElement | A custom gradient element used to create the shimmer effect. This allows flexibility to provide different gradient designs for the shimmer animation.                                                                             |
-| **duration** |    1000     |       number       | Specifies the duration of the shimmer animation in milliseconds. This value determines how long the shimmer effect will run, allowing you to control the speed and smoothness of the shimmer transition.                          |
+| shimmerElement  |      -      | React.ReactElement | A custom gradient element used to create the shimmer effect. This allows flexibility to provide different gradient designs for the shimmer animation.                                                                             |
+| duration |    1000     |       number       | Specifies the duration of the shimmer animation in milliseconds. This value determines how long the shimmer effect will run, allowing you to control the speed and smoothness of the shimmer transition.                          |
 
 ---
 
