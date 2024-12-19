@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamic-shimmer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shimmer component wrapper for React Native apps",
   "main": "lib/index",
   "types": "lib/index.d.ts",
