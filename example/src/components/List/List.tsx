@@ -35,7 +35,10 @@ const List = (): React.JSX.Element => {
   };
 
   return (
-    <Shimmer loading={true} shimmerElement={<ShimmerElement />} duration={2450}>
+    <Shimmer
+      loading={isLoading}
+      shimmerElement={<ShimmerElement />}
+      duration={2450}>
       <FlatList
         data={sampleDataForList}
         renderItem={renderItem}
